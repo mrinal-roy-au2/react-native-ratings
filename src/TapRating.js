@@ -10,8 +10,9 @@ import Star from './components/Star'
 export default class TapRating extends Component {
   static defaultProps = {
     defaultRating: 3,
-    reviews: ["Terrible", "Bad", "Okay", "Good", "Great"],
+    reviews: ["1", "2", "3", "4", "5"],
     count: 5,
+    onFinishRating: () => console.log('Rating selected. Attach a function here.'),
     showRating: true,
     reviewColor: 'rgba(230, 196, 46, 1)',
     reviewSize: 25
@@ -52,7 +53,7 @@ export default class TapRating extends Component {
   starSelectedInPosition(position) {
     const { onFinishRating } = this.props
 
-    if (typeof onFinishRating === 'function') onFinishRating(position);
+    onFinishRating(position);
 
     this.setState({ position: position })
   }
@@ -97,17 +98,23 @@ export default class TapRating extends Component {
 const styles = StyleSheet.create({
   ratingContainer: {
     backgroundColor: 'transparent',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 0,
+    padding: 0,
+    height: 22
   },
   reviewText: {
     fontWeight: 'bold',
-    margin: 10,
+    marginTop: 0,
+    marginBottom: 0
   },
   starContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 0,
+    paddingTop: 0
   }
 });
