@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
   reviewText: {
     fontWeight: 'bold',
     marginTop: 0,
-    marginBottom: 0
+    marginBottom: 0,
+    color: 'black'
   },
   starContainer: {
     flexDirection: 'row',
