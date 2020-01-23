@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     height: 22,
   },
   reviewText: {
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     marginTop: 0,
     marginBottom: 0,
     marginRight: 2
