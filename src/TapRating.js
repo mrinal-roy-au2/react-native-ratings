@@ -14,7 +14,8 @@ export default class TapRating extends Component {
     count: 5,
     onFinishRating: () => console.log('Rating selected. Attach a function here.'),
     showRating: true,
-    reviewColor: 'rgba(230, 196, 46, 1)',
+    starColor: 'rgba(230, 196, 46, 1)',
+    ratingsColor: 'rgba(1, 1, 1, 1)',
     reviewSize: 25
   };
 
@@ -60,7 +61,7 @@ export default class TapRating extends Component {
 
   render() {
     const { position } = this.state
-    const { count, reviews, showRating, reviewColor, reviewSize } = this.props
+    const { count, reviews, showRating, ratingsColor, reviewSize, starColor } = this.props
     const rating_array = []
     const starContainerStyle = [styles.starContainer]
 
@@ -83,7 +84,7 @@ export default class TapRating extends Component {
     return (
       <View style={styles.ratingContainer}>
         { showRating &&
-          <Text style={[styles.reviewText, {fontSize: reviewSize, color: reviewColor}]}>
+          <Text style={[styles.reviewText, {fontSize: reviewSize, color: ratingsColor}]}>
             {reviews[position - 1]}
           </Text>
         }
@@ -103,13 +104,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 0,
     padding: 0,
-    height: 22
+    height: 22,
   },
   reviewText: {
     fontWeight: 'bold',
     marginTop: 0,
     marginBottom: 0,
-    color: 'black'
+    marginRight: 2
   },
   starContainer: {
     flexDirection: 'row',
